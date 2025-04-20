@@ -1,0 +1,278 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 142 70% 96%;
+    --accent-foreground: 142 76% 36%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142 76% 36%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 142 70% 50%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 142 70% 20%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 142 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Hiệu ứng gradient cho background */
+.bg-gradient-grocery {
+  background: linear-gradient(135deg, #e0f7ea 0%, #d0f0e2 100%);
+}
+
+.bg-gradient-login {
+  background: linear-gradient(135deg, rgba(224, 247, 234, 0.9) 0%, rgba(197, 232, 213, 0.9) 100%);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Hiệu ứng hover cho card */
+.card-hover-effect {
+  transition: all 0.3s ease;
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hiệu ứng cho sidebar */
+.sidebar-item {
+  transition: all 0.2s ease;
+}
+
+.sidebar-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Hiệu ứng cho bảng */
+.table-row-hover {
+  transition: background-color 0.2s ease;
+}
+
+.table-row-hover:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Hiệu ứng cho nút */
+.button-effect {
+  transition: all 0.2s ease;
+}
+
+.button-effect:hover {
+  transform: translateY(-2px);
+}
+
+/* Hiệu ứng cho dashboard cards */
+.dashboard-card {
+  transition: all 0.3s ease;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Pattern background */
+.pattern-bg {
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444.99-1 .99-.552 0-1-.45-1-.99V8.99z' fill='%2334d399' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Replace the grocery-bg class with this more user-friendly pattern */
+.grocery-bg {
+  background-color: #f8fafc;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='temple' fill='%2310b981' fill-opacity='0.03'%3E%3Cpath d='M152 150v2H0v-2h28v-8H8v-20H0v-2h8V80h42v20h20v42H30v8h90v-8H80v-42h20V80h42v40h8V30h-8v40h-42V50H80V8h40V0h2v8h20v20h8V0h2v150zm-2 0v-28h-8v20h-20v8h28zM82 30v18h18V30H82zm20 18h20v20h18V30h-20V10H82v18h20v20zm0 2v18h18V50h-18zm20-22h18V10h-18v18zm-54 92v-18H50v18h18zm-20-18H28V82H10v38h20v20h38v-18H48v-20zm0-2V82H30v18h18zm-20 22H10v18h18v-18zm54 0v18h38v-20h20V82h-18v20h-20v20H82zm18-20H82v18h18v-18zm2-2h18V82h-18v18zm20 40v-18h18v18h-18zM30 0h-2v8H8v20H0v2h8v40h42V50h20V8H30V0zm20 48h18V30H50v18zm18-20H48v20H28v20H10V30h20V10h38v18zM30 50h18v18H30V50zm-2-40H10v18h18V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Replace the grocery-login-bg class with this more user-friendly pattern */
+.grocery-login-bg {
+  background-color: #f8fafc;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Update the banner-bg class for a more pleasant look */
+.banner-bg {
+  background-color: #10b981;
+  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+/* Glass effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Shelf background */
+.shelf-bg {
+  background-color: #10b981;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264.888-.14 1.855 1.67 4.073 3.475 6.04 3.35 1.033-.056 1.856-.858 2.68-1.59l.513.445c-.188.354-.392.713-.588 1.076-3.516.322-6.046-1.025-6.593-2.73-.274.173-.576.33-.897.477-.57-.327-1.107-.756-1.63-1.177-.445.144-.897.278-1.353.396C18.824 18.957 17.035 20 14.785 20H0v-1.646c.552.27 1.124.448 1.708.448 1.155 0 2.29-.546 3.04-1.475.02-.027.178-.162.483-.442.36-.33.737-.678 1.103-1.03.807-.798 1.563-1.638 2.095-2.35.817-1.086 1.383-2.2 1.618-3.338.2-.983.028-1.963-.83-2.638-.853-.674-1.932-.486-2.976.414-1.3 1.117-2.14 2.91-2.14 4.992 0 .877.127 1.74.374 2.576-1.003.228-1.998.395-2.987.494-.13-.84-.195-1.708-.195-2.597 0-3.024 1.333-5.82 3.674-7.67.64-.507 1.702-.867 2.556-.683 1.397.302 2.15 1.92 1.875 3.57-.298 1.79-1.32 3.43-2.937 5.04-.627.62-1.272 1.208-1.87 1.765-.046.043-.09.086-.136.13-.087-.08-.174-.158-.267-.237-.36-.33-.72-.645-1.068-.946-.348-.302-.695-.59-1.017-.85-.324-.262-.576-.468-.73-.587-.155-.12-.224-.17-.224-.17l.019-.014c.025-.02.05-.038.076-.058.3-.225.587-.454.87-.686.284-.232.56-.464.822-.68.262-.22.51-.423.74-.61.23-.19.428-.34.6-.46.17-.12.31-.21.41-.26.1-.05.15-.08.15-.08l.016.036c.022.05.042.107.063.16.02.054.038.114.055.177.016.064.03.13.04.2.013.066.02.137.023.21.007.073.01.15.01.228 0 .08-.005.156-.014.233-.01.076-.023.15-.04.222-.02.074-.04.146-.066.216-.027.07-.057.138-.09.204-.034.066-.073.13-.115.19-.042.06-.087.12-.136.176-.05.057-.103.11-.16.16-.057.05-.117.098-.18.14-.063.042-.13.08-.197.115-.07.035-.142.065-.22.093-.074.027-.15.05-.23.07-.08.02-.16.035-.243.047-.083.012-.168.018-.254.018-.087 0-.174-.006-.26-.018-.086-.012-.17-.03-.252-.05-.082-.02-.16-.046-.237-.076-.077-.03-.15-.066-.22-.104-.07-.038-.138-.08-.202-.125-.064-.045-.125-.094-.183-.145-.058-.05-.113-.106-.165-.163-.052-.058-.1-.12-.143-.183-.044-.065-.083-.133-.12-.204-.035-.07-.066-.144-.093-.22-.027-.078-.05-.158-.066-.24-.017-.08-.028-.164-.034-.25-.005-.085-.005-.17 0-.256.006-.086.018-.17.036-.252.018-.082.04-.16.07-.235.03-.074.064-.146.104-.214.04-.068.086-.133.136-.194.05-.06.104-.12.163-.173.06-.054.12-.104.185-.15.066-.045.134-.085.206-.12.07-.035.146-.063.223-.085.077-.022.156-.038.235-.048.08-.01.16-.015.24-.015.082 0 .16.006.24.018.08.012.157.03.23.054.074.023.146.05.215.083.07.03.136.066.2.104.064.038.125.08.183.126.058.045.113.094.165.144.052.05.1.106.142.163.044.058.083.118.12.18.035.063.066.13.093.198.027.07.05.14.066.216.017.075.028.153.034.233.005.08.005.16 0 .24-.006.08-.018.157-.036.23-.018.074-.04.146-.07.213-.03.067-.064.13-.104.19-.04.06-.086.117-.136.17-.05.053-.104.1-.163.143-.06.044-.12.083-.185.12-.066.036-.134.065-.206.09-.07.022-.146.04-.223.05-.077.01-.156.016-.235.016-.08 0-.158-.005-.237-.015-.08-.01-.155-.026-.23-.048-.073-.022-.143-.05-.21-.083-.066-.032-.13-.066-.19-.103-.06-.037-.116-.077-.17-.12-.052-.043-.1-.09-.142-.14-.043-.05-.08-.102-.115-.155-.035-.053-.066-.11-.093-.168-.027-.058-.05-.12-.066-.18-.017-.063-.028-.127-.034-.193-.005-.066-.005-.132 0-.198.006-.066.018-.13.036-.19.018-.06.04-.12.07-.174.03-.055.064-.106.104-.153.04-.047.086-.09.136-.13.05-.04.104-.077.163-.107.06-.03.12-.054.185-.073.066-.02.134-.033.206-.042.07-.01.146-.013.223-.013.077 0 .156.004.235.013.08.01.158.023.237.042.08.02.155.043.23.073.073.03.143.064.21.107.066.042.13.09.19.143.06.053.116.11.17.173.052.062.1.13.142.202.043.073.08.15.115.233.035.082.066.17.093.262.027.092.05.19.066.292.017.103.028.21.034.32.005.11.005.223 0 .335' fill='%2310b981' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Animated gradient */
+.animated-gradient {
+  background: linear-gradient(-45deg, #e0f7ea, #d0f0e2, #c5e8d5, #e0f7ea);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Update the banner-bg class for a more pleasant look */
+.banner-bg {
+  background-color: #10b981;
+  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* New section styles for clear layout */
+.section-title {
+  @apply text-xl font-semibold text-green-800 mb-4 flex items-center gap-2;
+}
+
+.section-container {
+  @apply p-4 bg-white rounded-lg border border-green-100 shadow-sm mb-6;
+}
+
+.section-grid {
+  @apply grid gap-4;
+}
+
+.section-grid-2 {
+  @apply grid gap-4 md:grid-cols-2;
+}
+
+.section-grid-3 {
+  @apply grid gap-4 md:grid-cols-3;
+}
+
+.section-grid-4 {
+  @apply grid gap-4 md:grid-cols-2 lg:grid-cols-4;
+}
+
+.data-card {
+  @apply bg-white p-4 rounded-lg border border-green-100 shadow-sm hover:shadow-md transition-all duration-200;
+}
+
+.data-card-header {
+  @apply flex justify-between items-center mb-2;
+}
+
+.data-card-title {
+  @apply text-sm font-medium text-gray-500;
+}
+
+.data-card-value {
+  @apply text-2xl font-bold;
+}
+
+.data-card-footer {
+  @apply text-xs text-gray-500 mt-2;
+}
+
+.data-card-positive {
+  @apply text-green-600;
+}
+
+.data-card-negative {
+  @apply text-red-600;
+}
+
+/* Image container styles */
+.img-container {
+  @apply relative overflow-hidden rounded-lg;
+}
+
+.img-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-4;
+}
+
+.img-text {
+  @apply text-white font-medium;
+}
+
+/* Divider styles */
+.divider {
+  @apply h-px w-full bg-gradient-to-r from-transparent via-green-200 to-transparent my-6;
+}
+
+/* Progress bar */
+.progress-container {
+  @apply w-full bg-gray-100 rounded-full h-2.5 mb-1;
+}
+
+.progress-bar {
+  @apply h-2.5 rounded-full bg-gradient-to-r from-green-400 to-green-600;
+}
