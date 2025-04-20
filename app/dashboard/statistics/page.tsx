@@ -54,7 +54,7 @@ export default function StatisticsPage() {
       <div className="section-container">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight text-green-800">Thống kê (UC-07)</h1>
+            <h1 className="text-3xl font-bold tracking-tight text-green-800">Thống kê</h1>
             <p className="text-muted-foreground">Xem thống kê doanh thu và hàng hóa</p>
           </div>
 

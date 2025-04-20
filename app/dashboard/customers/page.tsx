@@ -183,7 +183,7 @@ export default function CustomersPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Khách hàng thân thiết (UC-06)</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Quản lý khách hàng thân thiết</h1>
         <p className="text-muted-foreground">Quản lý khách hàng tham gia chương trình khách hàng thân thiết</p>
       </div>
 

@@ -133,7 +133,7 @@ export default function ImportManagementPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Quản lý nhập hàng (UC-04)</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Quản lý nhập hàng</h1>
         <p className="text-muted-foreground">Quản lý việc nhập hàng vào kho</p>
       </div>
 

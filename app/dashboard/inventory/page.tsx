@@ -166,7 +166,7 @@ export default function InventoryPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Kiểm kê hàng (UC-10)</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Kiểm kê hàng tồn kho</h1>
         <p className="text-muted-foreground">Thực hiện kiểm kê và kiểm soát hàng tồn kho</p>
       </div>
 
