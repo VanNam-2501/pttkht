@@ -4,10 +4,25 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { ScanBarcodeIcon as BarcodeScanner, Plus, Printer, Search, Trash2, ShoppingCart } from "lucide-react"
+import { Label } from "@/components/ui/label";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import {
+  ScanBarcodeIcon as BarcodeScanner,
+  Plus,
+  Printer,
+  Search,
+  X,
+  ShoppingCart,
+} from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { Loader2 } from "lucide-react";
 import { Separator } from "@/components/ui/separator"
 import {
   Dialog,
@@ -119,7 +134,7 @@ export default function InvoicePage() {
 
   return (
     <div className="space-y-6">
-      <div>
+      <div className="mb-6">
         <h1 className="text-3xl font-bold tracking-tight">Lập hóa đơn</h1>
         <p className="text-muted-foreground">Tạo hoá đơn cho khách hàng và áp dụng điểm tích lũy</p>
       </div>
@@ -132,7 +147,7 @@ export default function InvoicePage() {
             </CardHeader>
             <CardContent>
               <div className="flex gap-2 mb-4">
-                <div className="relative flex-1">
+                <div className="relative flex-1 ">
                   <Input
                     placeholder="Quét hoặc nhập mã sản phẩm"
                     value={barcode}
@@ -140,13 +155,13 @@ export default function InvoicePage() {
                     disabled={isScanning}
                   />
                   {isScanning && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-background/80">
-                      <div className="animate-pulse">Đang quét...</div>
+                    <div className="absolute inset-0 flex items-center justify-center bg-background/50 rounded-md">
+                      <Loader2 className="animate-spin h-5 w-5 text-muted-foreground" />
                     </div>
                   )}
                 </div>
-                <Button variant="outline" size="icon" onClick={handleScanBarcode} disabled={isScanning}>
-                  <BarcodeScanner className="h-5 w-5" />
+                <Button variant="outline" size="sm" className="-ml-2" onClick={handleScanBarcode} disabled={isScanning}>
+                  <BarcodeScanner className="h-4 w-4" />
                 </Button>
                 <Button variant="default" onClick={handleScanBarcode} disabled={isScanning}>
                   <Plus className="h-4 w-4 mr-2" /> Thêm
@@ -164,7 +179,7 @@ export default function InvoicePage() {
                       <TableHead className="w-[50px]"></TableHead>
                     </TableRow>
                   </TableHeader>
-                  <TableBody>
+                  <TableBody className="-mt-2">
                     {products.map((product) => (
                       <TableRow key={product.id}>
                         <TableCell>{product.name}</TableCell>
@@ -173,7 +188,7 @@ export default function InvoicePage() {
                           <div className="flex items-center justify-center">
                             <Button
                               variant="outline"
-                              size="icon"
+                              size="sm"
                               className="h-6 w-6 rounded-full"
                               onClick={() => handleQuantityChange(product.id, product.quantity - 1)}
                             >
@@ -181,7 +196,7 @@ export default function InvoicePage() {
                             </Button>
                             <span className="w-8 text-center">{product.quantity}</span>
                             <Button
-                              variant="outline"
+                              variant="outline  "
                               size="icon"
                               className="h-6 w-6 rounded-full"
                               onClick={() => handleQuantityChange(product.id, product.quantity + 1)}
@@ -195,20 +210,20 @@ export default function InvoicePage() {
                         </TableCell>
                         <TableCell>
                           <Button
-                            variant="ghost"
-                            size="icon"
-                            className="h-7 w-7 text-red-500"
+                            variant="outline"
+                            size="sm"
+                            className="h-8 w-8 rounded-md border-dashed border-gray-300 hover:bg-gray-100"
                             onClick={() => handleRemoveProduct(product.id)}
                           >
-                            <Trash2 className="h-4 w-4" />
+                            <X className="h-4 w-4 text-gray-500 hover:text-gray-900" />
                           </Button>
                         </TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
                 </Table>
-              ) : (
-                <div className="flex flex-col items-center justify-center py-8 text-center text-muted-foreground">
+              ) : (               
+                <div className="flex flex-col items-center justify-center py-8 text-center text-muted-foreground rounded-md border-2 border-dashed">
                   <ShoppingCart className="h-12 w-12 mb-2 text-muted-foreground/50" />
                   <p>Chưa có sản phẩm nào</p>
                   <p className="text-sm">Quét hoặc thêm sản phẩm để bắt đầu</p>
@@ -224,30 +239,33 @@ export default function InvoicePage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
-                  <div className="flex justify-between">
+                  <div className="flex justify-between text-sm">
                     <span>Tổng tiền hàng:</span>
-                    <span>{calculateSubtotal().toLocaleString()} đ</span>
+                    <span>{calculateSubtotal().toLocaleString("vi-VN")} đ</span>
                   </div>
                   {discount > 0 && (
-                    <div className="flex justify-between text-green-600">
+                    <div className="flex justify-between text-sm text-green-600">
                       <span>Giảm giá ({discount}%):</span>
-                      <span>- {(calculateSubtotal() * (discount / 100)).toLocaleString()} đ</span>
+                      <span>- {(calculateSubtotal() * (discount / 100)).toLocaleString("vi-VN")} đ</span>
                     </div>
                   )}
                   <Separator />
                   <div className="flex justify-between font-bold text-lg">
                     <span>Thành tiền:</span>
-                    <span>{calculateTotal().toLocaleString()} đ</span>
+                    <span>{calculateTotal().toLocaleString("vi-VN")} đ</span>
                   </div>
                   {loyaltyPoints > 0 && (
-                    <div className="flex justify-between text-blue-600 text-sm">
+                    <div className="flex justify-between text-blue-600 text-sm ">
                       <span>Điểm tích lũy:</span>
                       <span>+{Math.floor(calculateTotal() / 10000)}</span>
                     </div>
                   )}
                 </div>
               </CardContent>
-              <CardFooter className="flex justify-between">
+              <CardFooter className="flex justify-between pt-4">
+                {/* <Button variant="outline" size="sm">
+                  Lưu tạm
+                </Button> */}
                 <Button variant="outline">
                   <Printer className="h-4 w-4 mr-2" /> In hoá đơn
                 </Button>
@@ -268,7 +286,7 @@ export default function InvoicePage() {
                   <Label htmlFor="customer-barcode">Thẻ khách hàng thân thiết</Label>
                   <div className="flex gap-2">
                     <div className="relative flex-1">
-                      <Input
+                      <Input                        
                         id="customer-barcode"
                         placeholder="Quét thẻ khách hàng"
                         value={customerBarcode}
@@ -276,14 +294,14 @@ export default function InvoicePage() {
                         disabled={isScanningCustomer}
                       />
                       {isScanningCustomer && (
-                        <div className="absolute inset-0 flex items-center justify-center bg-background/80">
-                          <div className="animate-pulse">Đang quét...</div>
+                        <div className="absolute inset-0 flex items-center justify-center bg-background/50 rounded-md">
+                          <Loader2 className="animate-spin h-5 w-5 text-muted-foreground" />
                         </div>
                       )}
                     </div>
                     <Button
                       variant="outline"
-                      size="icon"
+                      size="sm"
                       onClick={handleScanCustomerBarcode}
                       disabled={isScanningCustomer}
                     >
@@ -297,10 +315,10 @@ export default function InvoicePage() {
                     <div className="flex justify-between items-start">
                       <div>
                         <h3 className="font-medium">{customerName}</h3>
-                        <p className="text-sm text-muted-foreground">{customerBarcode}</p>
+                        <p className="text-sm text-muted-foreground">{customerBarcode}</p>                        
                       </div>
-                      <Badge variant="outline" className="bg-green-50 text-green-700 hover:bg-green-50">
-                        Khách hàng thân thiết
+                      <Badge variant="secondary">
+                        Thân thiết
                       </Badge>
                     </div>
                     {loyaltyPoints > 0 && (
@@ -313,8 +331,8 @@ export default function InvoicePage() {
                 )}
 
                 {!customerBarcode && (
-                  <div className="flex flex-col items-center justify-center py-6 text-center text-muted-foreground">
-                    <Search className="h-10 w-10 mb-2 text-muted-foreground/50" />
+                  <div className="flex flex-col items-center justify-center py-6 text-center text-muted-foreground rounded-md border-2 border-dashed">
+                    <Search className="h-8 w-8 mb-2 text-muted-foreground/50" />
                     <p>Chưa có thông tin khách hàng</p>
                     <p className="text-sm">Quét thẻ để áp dụng điểm tích lũy và khuyến mãi</p>
                   </div>
@@ -330,19 +348,19 @@ export default function InvoicePage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  <div className="grid grid-cols-2 gap-2">
-                    <Button variant="outline" className="h-20 flex flex-col">
-                      <span className="text-lg">Tiền mặt</span>
-                      <span className="text-xs text-muted-foreground">Thanh toán bằng tiền mặt</span>
+                  <div className="grid grid-cols-2 gap-4">
+                  <Button variant="outline" className="h-20 flex flex-col items-center justify-center">
+                      <span className="text-lg font-medium">Tiền mặt</span>
+                      {/* <span className="text-xs text-muted-foreground">Thanh toán bằng tiền mặt</span> */}
                     </Button>
-                    <Button variant="outline" className="h-20 flex flex-col">
-                      <span className="text-lg">Thẻ</span>
-                      <span className="text-xs text-muted-foreground">Thẻ ATM/Tín dụng</span>
+                    <Button variant="outline" className="h-20 flex flex-col items-center justify-center">
+                      <span className="text-lg font-medium">Thẻ</span>
+                      {/* <span className="text-xs text-muted-foreground">Thẻ ATM/Tín dụng</span> */}
                     </Button>
-                    <Button variant="outline" className="h-20 flex flex-col">
-                      <span className="text-lg">Chuyển khoản</span>
-                      <span className="text-xs text-muted-foreground">Chuyển khoản ngân hàng</span>
-                    </Button>
+                    <Button variant="outline" className="h-20 flex flex-col items-center justify-center">
+                      <span className="text-lg font-medium">Chuyển khoản</span>
+                      {/* <span className="text-xs text-muted-foreground">Chuyển khoản ngân hàng</span> */}
+                    </Button>                    
                     <Button variant="outline" className="h-20 flex flex-col">
                       <span className="text-lg">Khác</span>
                       <span className="text-xs text-muted-foreground">Phương thức khác</span>
@@ -359,18 +377,18 @@ export default function InvoicePage() {
       <Dialog open={showLoyaltyDialog} onOpenChange={setShowLoyaltyDialog}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Chương trình khách hàng thân thiết</DialogTitle>
-            <DialogDescription>Đã xác định khách hàng có thẻ thân thiết</DialogDescription>
+            <DialogTitle className="text-lg font-semibold">Chương trình khách hàng thân thiết</DialogTitle>
+            <DialogDescription className="text-sm text-muted-foreground">Đã xác định khách hàng có thẻ thân thiết</DialogDescription>
           </DialogHeader>
           <div className="space-y-4 py-2">
-            <div className="rounded-lg bg-green-50 p-4 text-green-700">
-              <h4 className="font-semibold mb-1">Đã áp dụng khuyến mãi!</h4>
-              <p>Khuyến mãi {discount}% đã được áp dụng cho đơn hàng này.</p>
+            <div className="rounded-lg bg-emerald-50 p-4 text-emerald-700">
+              <h4 className="font-semibold">Đã áp dụng khuyến mãi!</h4>
+              <p className="text-sm">Khuyến mãi {discount}% đã được áp dụng cho đơn hàng này.</p>
             </div>
-            <div className="rounded-lg bg-blue-50 p-4 text-blue-700">
-              <h4 className="font-semibold mb-1">Điểm tích lũy</h4>
-              <p>Khách hàng sẽ tích lũy thêm {Math.floor(calculateTotal() / 10000)} điểm với đơn hàng này.</p>
-              <p className="text-sm mt-1">Điểm hiện tại: {loyaltyPoints}</p>
+            <div className="rounded-lg bg-sky-50 p-4 text-sky-700">
+              <h4 className="font-semibold">Điểm tích lũy</h4>
+              <p className="text-sm">Khách hàng sẽ tích lũy thêm {Math.floor(calculateTotal() / 10000)} điểm với đơn hàng này.</p>
+              <p className="text-sm mt-2">Điểm hiện tại: {loyaltyPoints}</p>
             </div>
           </div>
           <DialogFooter>
