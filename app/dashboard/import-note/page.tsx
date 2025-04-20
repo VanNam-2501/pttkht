@@ -185,7 +185,7 @@ export default function ImportNotePage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Phiếu nhập hàng (UC-08)</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Tạo phiếu nhập hàng</h1>
         <p className="text-muted-foreground">Tạo phiếu nhập hàng để ghi nhận sản phẩm nhập vào kho</p>
       </div>
 

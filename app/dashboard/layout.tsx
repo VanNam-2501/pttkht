@@ -87,57 +87,49 @@ export default function DashboardLayout({
   }
 
   const navItems = [
-    { href: "/dashboard", icon: <Home className="h-5 w-5" />, title: "Trang chủ", badge: 0 },
-    { href: "/dashboard/invoice", icon: <ShoppingCart className="h-5 w-5" />, title: "Lập hoá đơn (UC-03)", badge: 0 },
+    { href: "/dashboard", icon: <Home className="h-5 w-5" />, title: "Trang chủ"},
+    { href: "/dashboard/invoice", icon: <ShoppingCart className="h-5 w-5" />, title: "Lập hoá đơn"},
     {
       href: "/dashboard/import-management",
       icon: <Truck className="h-5 w-5" />,
-      title: "Quản lý nhập hàng (UC-04)",
+      title: "Quản lý nhập hàng",
       badge: 2,
     },
     {
       href: "/dashboard/export-management",
       icon: <TruckOut className="h-5 w-5" />,
-      title: "Quản lý xuất hàng (UC-05)",
+      title: "Quản lý xuất hàng",
       badge: 1,
     },
     {
       href: "/dashboard/customers",
       icon: <Users className="h-5 w-5" />,
-      title: "Khách hàng thân thiết (UC-06)",
-      badge: 0,
-    },
-    { href: "/dashboard/statistics", icon: <BarChart3 className="h-5 w-5" />, title: "Thống kê (UC-07)", badge: 0 },
+      title: "Khách hàng thân thiết"},
+    { href: "/dashboard/statistics", icon: <BarChart3 className="h-5 w-5" />, title: "Thống kê"},
     {
       href: "/dashboard/import-note",
       icon: <PackagePlus className="h-5 w-5" />,
-      title: "Phiếu nhập hàng (UC-08)",
-      badge: 0,
-    },
+      title: "Phiếu nhập hàng"},
     {
       href: "/dashboard/export-note",
       icon: <PackageCheck className="h-5 w-5" />,
-      title: "Phiếu xuất hàng (UC-09)",
-      badge: 0,
+      title: "Phiếu xuất hàng"
     },
     {
       href: "/dashboard/inventory",
       icon: <ClipboardList className="h-5 w-5" />,
-      title: "Kiểm kê hàng (UC-10)",
-      badge: 0,
+      title: "Kiểm kê hàng"
     },
     {
       href: "/dashboard/return-note",
       icon: <Package className="h-5 w-5" />,
-      title: "Phiếu trả hàng (UC-11)",
-      badge: 0,
+      title: "Phiếu trả hàng"
     },
-    { href: "/dashboard/products", icon: <Store className="h-5 w-5" />, title: "Quản lý sản phẩm (UC-13)", badge: 0 },
+    { href: "/dashboard/products", icon: <Store className="h-5 w-5" />, title: "Quản lý sản phẩm"},
     {
       href: "/dashboard/promotions",
       icon: <Percent className="h-5 w-5" />,
-      title: "Quản lý khuyến mãi (UC-14)",
-      badge: 0,
+      title: "Quản lý khuyến mãi"
     },
   ]
 

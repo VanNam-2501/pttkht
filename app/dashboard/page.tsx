@@ -20,7 +20,7 @@ export default function DashboardPage() {
   const functionCards = [
     {
       title: "Lập hoá đơn",
-      description: "Tạo hoá đơn cho khách hàng (UC-03)",
+      description: "Tạo hoá đơn cho khách hàng",
       icon: <ShoppingCart className="h-8 w-8 text-green-600" />,
       href: "/dashboard/invoice",
       color: "bg-green-50",
@@ -29,7 +29,7 @@ export default function DashboardPage() {
     },
     {
       title: "Quản lý nhập hàng",
-      description: "Quản lý việc nhập hàng vào kho (UC-04)",
+      description: "Quản lý việc nhập hàng vào kho",
       icon: <Truck className="h-8 w-8 text-blue-600" />,
       href: "/dashboard/import-management",
       color: "bg-blue-50",
@@ -40,7 +40,7 @@ export default function DashboardPage() {
     },
     {
       title: "Quản lý xuất hàng",
-      description: "Quản lý việc xuất hàng từ kho (UC-05)",
+      description: "Quản lý việc xuất hàng từ kho",
       icon: <TruckOut className="h-8 w-8 text-purple-600" />,
       href: "/dashboard/export-management",
       color: "bg-purple-50",
@@ -51,7 +51,7 @@ export default function DashboardPage() {
     },
     {
       title: "Khách hàng thân thiết",
-      description: "Quản lý khách hàng thân thiết (UC-06)",
+      description: "Quản lý khách hàng thân thiết",
       icon: <Users className="h-8 w-8 text-orange-600" />,
       href: "/dashboard/customers",
       color: "bg-orange-50",
@@ -60,7 +60,7 @@ export default function DashboardPage() {
     },
     {
       title: "Thống kê",
-      description: "Xem thống kê doanh thu (UC-07)",
+      description: "Xem thống kê doanh thu",
       icon: <BarChart3 className="h-8 w-8 text-red-600" />,
       href: "/dashboard/statistics",
       color: "bg-red-50",
@@ -69,7 +69,7 @@ export default function DashboardPage() {
     },
     {
       title: "Phiếu nhập hàng",
-      description: "Tạo phiếu nhập hàng (UC-08)",
+      description: "Tạo phiếu nhập hàng",
       icon: <PackagePlus className="h-8 w-8 text-cyan-600" />,
       href: "/dashboard/import-note",
       color: "bg-cyan-50",
@@ -78,7 +78,7 @@ export default function DashboardPage() {
     },
     {
       title: "Phiếu xuất hàng",
-      description: "Tạo phiếu xuất hàng (UC-09)",
+      description: "Tạo phiếu xuất hàng",
       icon: <PackageCheck className="h-8 w-8 text-teal-600" />,
       href: "/dashboard/export-note",
       color: "bg-teal-50",
@@ -87,7 +87,7 @@ export default function DashboardPage() {
     },
     {
       title: "Kiểm kê hàng",
-      description: "Kiểm kê hàng trong kho (UC-10)",
+      description: "Kiểm kê hàng hóa trong kho",
       icon: <ClipboardList className="h-8 w-8 text-emerald-600" />,
       href: "/dashboard/inventory",
       color: "bg-emerald-50",
@@ -96,7 +96,7 @@ export default function DashboardPage() {
     },
     {
       title: "Phiếu trả hàng",
-      description: "Tạo phiếu trả hàng (UC-11)",
+      description: "Tạo phiếu trả hàng",
       icon: <Package className="h-8 w-8 text-amber-600" />,
       href: "/dashboard/return-note",
       color: "bg-amber-50",
@@ -105,7 +105,7 @@ export default function DashboardPage() {
     },
     {
       title: "Quản lý sản phẩm",
-      description: "Quản lý thông tin sản phẩm (UC-13)",
+      description: "Quản lý thông tin sản phẩm",
       icon: <Store className="h-8 w-8 text-indigo-600" />,
       href: "/dashboard/products",
       color: "bg-indigo-50",
@@ -114,7 +114,7 @@ export default function DashboardPage() {
     },
     {
       title: "Quản lý khuyến mãi",
-      description: "Quản lý chương trình khuyến mãi (UC-14)",
+      description: "Quản lý chương trình khuyến mãi",
       icon: <Percent className="h-8 w-8 text-pink-600" />,
       href: "/dashboard/promotions",
       color: "bg-pink-50",

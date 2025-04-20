@@ -338,7 +338,7 @@ export default function PromotionsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Quản lý khuyến mãi (UC-14)</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Quản lý chương trình khuyến mãi</h1>
         <p className="text-muted-foreground">Quản lý các chương trình khuyến mãi của cửa hàng</p>
       </div>
 

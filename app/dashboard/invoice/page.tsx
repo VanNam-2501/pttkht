@@ -120,7 +120,7 @@ export default function InvoicePage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Lập hoá đơn (UC-03)</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Tạo hóa đơn</h1>
         <p className="text-muted-foreground">Tạo hoá đơn cho khách hàng và áp dụng điểm tích lũy</p>
       </div>
 

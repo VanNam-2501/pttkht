@@ -331,7 +331,7 @@ export default function ProductsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight text-green-800">Quản lý sản phẩm (UC-13)</h1>
+        <h1 className="text-3xl font-bold tracking-tight text-green-800">Quản lý thông tin sản phẩm</h1>
         <p className="text-muted-foreground">Quản lý danh mục sản phẩm của cửa hàng</p>
       </div>
 

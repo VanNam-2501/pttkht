@@ -168,7 +168,7 @@ export default function ExportNotePage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Phiếu xuất hàng (UC-09)</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Tạo phiếu xuất hàng</h1>
         <p className="text-muted-foreground">Tạo phiếu xuất hàng để ghi nhận sản phẩm xuất ra khỏi kho</p>
       </div>
 
